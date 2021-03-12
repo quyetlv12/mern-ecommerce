@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
-const { signup, signin, signout, } = require("../controllers/auth");
-const { userSignupValidator } = require("../validator");
+import { signup, signin, signout, } from "../controllers/auth";
+import { userSignupValidator } from "../validator";
 
 router.post('/signup', userSignupValidator, signup);
 router.post('/signin', signin);
