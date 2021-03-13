@@ -1,11 +1,12 @@
-const express = require('express');
+import express from 'express';
+import morgan from 'morgan';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
+import expressValidator from 'express-validator';
+
 const app = express();
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const expressValidator = require('express-validator');
 dotenv.config()
 
 
