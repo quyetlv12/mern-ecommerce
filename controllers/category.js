@@ -30,6 +30,7 @@ export const categoryById = (req, res, next, id) => {
             })
         }
         req.category = category;
+        console.log(req.category);
         next();
     })
 }
@@ -52,15 +53,14 @@ export const remove = (req, res) => {
 }
 export const update = (req, res) => {
     const category = req.category;
-    console.log(category);
-    console.log('REQUEST', req)
-    // category.name = req.body.name;
-    // category.save((err, data) => {
-    //     if (err) {
-    //         return res.status(400).json({
-    //             error: "Category does not exist"
-    //         })
-    //     }
-    //     res.json({ data });
-    // });
+    console.log('req.body', req.body)
+    category.name = req.body.name;
+    category.save((err, data) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Category does not exist"
+            })
+        }
+        res.json({ data });
+    });
 }

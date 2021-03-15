@@ -20,9 +20,7 @@ mongoose.connect(
     process.env.MONGO_URI, {
     useNewUrlParser: true,
     useCreateIndex: true
-}
-)
-    .then(() => console.log('DB Connected'))
+}).then(() => console.log('DB Connected'))
 
 mongoose.connection.on('error', err => {
     console.log(`DB connection error: ${err.message}`)
@@ -39,6 +37,7 @@ app.use('/api', authRoutes);
 app.use('/api', userRoutes);
 app.use('/api', categoryRoutes);
 app.use('/api', productRoutes);
+app.use('/api', newsRoutes);
 
 const port = process.env.PORT || 8000
 app.listen(port, () => {

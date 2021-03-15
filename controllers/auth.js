@@ -11,11 +11,10 @@ exports.signup = (req, res) => {
             return res.status(400).json({
                 error: errorHandler(error)
             })
-        } else {
-            user.salt = undefined
-            user.hashed_password = undefined
-            res.json({ user })
         }
+        user.salt = undefined
+        user.hashed_password = undefined
+        res.json({ hihi: 'thay Dat', user })
     })
 }
 exports.signin = (req, res) => {
