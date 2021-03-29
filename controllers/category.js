@@ -53,7 +53,6 @@ export const remove = (req, res) => {
 }
 export const update = (req, res) => {
     const category = req.category;
-    console.log('req.body', req.body)
     category.name = req.body.name;
     category.save((err, data) => {
         if (err) {

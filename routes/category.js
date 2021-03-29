@@ -8,8 +8,9 @@ import { create, list, read, remove, update, categoryById } from "../controllers
 router.post("/category/create/:userId", requireSignin, isAuth, isAdmin, create);
 router.get("/category/:categoryId", read);
 router.delete("/category/:categoryId/:userId", remove);
-router.put("/category/:categoryId/:userId", update);
-router.get("/category", list);
+// router.put("/category/:categoryId/:userId", update);
+router.put("/category/:categoryId", update);
+router.get("/categories", list);
 
 router.param("userId", userById);
 router.param("categoryId", categoryById);

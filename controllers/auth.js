@@ -14,7 +14,7 @@ exports.signup = (req, res) => {
         }
         user.salt = undefined
         user.hashed_password = undefined
-        res.json({ hihi: 'thay Dat', user })
+        res.json({ user })
     })
 }
 exports.signin = (req, res) => {
